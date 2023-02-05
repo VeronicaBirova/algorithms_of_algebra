@@ -5,7 +5,7 @@ int isprime(int n){
     int k=2;
     while((k*k)<=n){
         if((n%k)==0)
-            return 0;
+            return 0; //если нашёлся хоть один делитель, то это составное число
         k++;
     }
     return 1;
