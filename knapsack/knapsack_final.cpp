@@ -4,9 +4,9 @@
 #include <fstream>
 using namespace std;
 
-long W; //размер рюкзака
-vector<long> c; //стоимость каждого предмета
-vector<long> v; //вес каждого предмета
+long W; //Г°Г Г§Г¬ГҐГ° Г°ГѕГЄГ§Г ГЄГ 
+vector<long> c; //Г±ГІГ®ГЁГ¬Г®Г±ГІГј ГЄГ Г¦Г¤Г®ГЈГ® ГЇГ°ГҐГ¤Г¬ГҐГІГ 
+vector<long> v; //ГўГҐГ± ГЄГ Г¦Г¤Г®ГЈГ® ГЇГ°ГҐГ¤Г¬ГҐГІГ 
 
 int load_data(char* fn){
     int n;
@@ -22,7 +22,7 @@ int load_data(char* fn){
     return 0;
 }
 
-//возвращает максимальную стоимость предметов, которые могут быть уложены в рюкзак размером W
+//ГўГ®Г§ГўГ°Г Г№Г ГҐГІ Г¬Г ГЄГ±ГЁГ¬Г Г«ГјГ­ГіГѕ Г±ГІГ®ГЁГ¬Г®Г±ГІГј ГЇГ°ГҐГ¤Г¬ГҐГІГ®Гў, ГЄГ®ГІГ®Г°Г»ГҐ Г¬Г®ГЈГіГІ ГЎГ»ГІГј ГіГ«Г®Г¦ГҐГ­Г» Гў Г°ГѕГЄГ§Г ГЄ Г°Г Г§Г¬ГҐГ°Г®Г¬ W
 int knapsack(int W, const vector<long>& v, const vector<long>& c){
     int n = v.size();
     vector<vector<long>> dp(n + 1, vector<long>(W + 1, 0));
@@ -36,7 +36,7 @@ int knapsack(int W, const vector<long>& v, const vector<long>& c){
         }
     }
 
-    /*отладочная печать
+    /*Г®ГІГ«Г Г¤Г®Г·Г­Г Гї ГЇГҐГ·Г ГІГј
     for(int i=1; i<=n; ++i){
         cout << endl;
         for(int j=0; j<=W; ++j)
@@ -54,6 +54,6 @@ int main(int argc, char** argv){
     load_data(filename);
 
     long maxValue=knapsack(W, v, c);
-    cout<<"Максимальная стоимость предметов: "<<maxValue<<endl;
+    cout<<"ГЊГ ГЄГ±ГЁГ¬Г Г«ГјГ­Г Гї Г±ГІГ®ГЁГ¬Г®Г±ГІГј ГЇГ°ГҐГ¤Г¬ГҐГІГ®Гў: "<<maxValue<<endl;
     return 0;
 }
